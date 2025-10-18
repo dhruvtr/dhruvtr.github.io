@@ -15,9 +15,7 @@ const Header = () => {
     <header className={headerClass}>
       <Link href="/" aria-label={siteMetadata.headerTitle}>
         {typeof siteMetadata.headerTitle === 'string' ? (
-          <div className="h-6 text-2xl font-semibold">
-            {siteMetadata.headerTitle}
-          </div>
+          <div className="h-6 text-2xl font-semibold">{siteMetadata.headerTitle}</div>
         ) : (
           siteMetadata.headerTitle
         )}
@@ -36,7 +34,7 @@ const Header = () => {
               </Link>
             ))}
         </div>
-            <ThemeSwitch />
+        <ThemeSwitch />
         <MobileNav />
       </div>
     </header>

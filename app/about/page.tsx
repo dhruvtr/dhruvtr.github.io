@@ -8,7 +8,7 @@ export const metadata = genPageMetadata({ title: 'About' })
 
 export default function Page() {
   const author = allAuthors.find((p) => p.slug === 'default') as Authors
-  
+
   if (!author) {
     return (
       <div className="divide-y divide-gray-200 dark:divide-gray-700">
@@ -23,7 +23,7 @@ export default function Page() {
       </div>
     )
   }
-  
+
   const mainContent = coreContent(author)
 
   return (
