@@ -6,12 +6,12 @@ import SelectedPublications from '@/components/SelectedPublications'
 
 interface Props {
   children: ReactNode
-  content: Omit<Authors, '_id' | '_raw' | 'body'> & { cv?: string }
+  content: Omit<Authors, '_id' | '_raw' | 'body'> & { cv?: string; scholar?: string }
 }
 
 export default function AuthorLayout({ children, content }: Props) {
   const { name, avatar, occupation, company, email, twitter, bluesky, linkedin, github } = content
-  const { cv } = content
+  const { cv, scholar } = content
 
   return (
     <>
@@ -40,6 +40,7 @@ export default function AuthorLayout({ children, content }: Props) {
               <div className="flex space-x-3">
                 <SocialIcon kind="github" href={github} />
                 <SocialIcon kind="linkedin" href={linkedin} />
+                <SocialIcon kind="scholar" href={scholar} />
                 <SocialIcon kind="cv" href={cv} />
               </div>
             </div>

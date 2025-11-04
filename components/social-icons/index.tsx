@@ -12,6 +12,7 @@ import {
   Medium,
   Bluesky,
   Cv,
+  GoogleScholar,
 } from './icons'
 
 const components = {
@@ -28,6 +29,7 @@ const components = {
   medium: Medium,
   bluesky: Bluesky,
   cv: Cv,
+  scholar: GoogleScholar,
 }
 
 type SocialIconProps = {
@@ -56,6 +58,9 @@ const SocialIcon = ({ kind, href, size = 8 }: SocialIconProps) => {
       <SocialSvg
         className={`hover:text-primary-500 dark:hover:text-primary-400 fill-current text-gray-700 dark:text-gray-200 h-${size} w-${size}`}
       />
+      {kind === 'cv' ? (
+        <span className="ml-2 align-middle text-gray-700 dark:text-gray-200">CV</span>
+      ) : null}
     </a>
   )
 }
