@@ -6,11 +6,12 @@ import SelectedPublications from '@/components/SelectedPublications'
 
 interface Props {
   children: ReactNode
-  content: Omit<Authors, '_id' | '_raw' | 'body'>
+  content: Omit<Authors, '_id' | '_raw' | 'body'> & { cv?: string }
 }
 
 export default function AuthorLayout({ children, content }: Props) {
-  const { name, avatar, occupation, company, email, twitter, bluesky, linkedin, github, cv } = content
+  const { name, avatar, occupation, company, email, twitter, bluesky, linkedin, github } = content
+  const { cv } = content
 
   return (
     <>
